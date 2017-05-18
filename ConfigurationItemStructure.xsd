@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="urn:oio:atp:itsm:1.0.0"
+  xmlns:itsm1="urn:oio:atp:itsm:1.0.0"
+  elementFormDefault="qualified"
+  xml:lang="DA">
+  <xsd:include schemaLocation="SequenceNumberIdentifier.xsd"/>
+  <xsd:include schemaLocation="ConfigurationItemIdentifier.xsd"/>
+  <xsd:element name="ConfigurationItemStructure" type="itsm1:ConfigurationItemStructureType"/>
+  <xsd:complexType name="ConfigurationItemStructureType">
+    <xsd:sequence>
+      <xsd:element ref="itsm1:SequenceNumberIdentifier"/>
+      <xsd:element ref="itsm1:ConfigurationItemIdentifier"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

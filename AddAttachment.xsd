@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="urn:oio:atp:itsm:casemanagement:1.0.0"
+  xmlns:itsm="urn:oio:atp:itsm:casemanagement:1.0.0"
+  xmlns:itsm1="urn:oio:atp:itsm:1.0.0"
+  elementFormDefault="qualified"
+  xml:lang="DA">
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="VendorIdentifier.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="Attachment.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="ExternalReferenceIdentifier.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="ATPCaseIdentifier.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="SystemIdentifier.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="AttachmentNameText.xsd"/>
+  <xsd:element name="AddAttachment" type="itsm:AddAttachmentType"/>
+  <xsd:complexType name="AddAttachmentType">
+    <xsd:sequence>
+      <xsd:element ref="itsm1:VendorIdentifier"/>
+      <xsd:element ref="itsm1:SystemIdentifier"/>
+      <xsd:element ref="itsm1:ATPCaseIdentifier"/>
+      <xsd:element ref="itsm1:ExternalReferenceIdentifier" minOccurs="0" maxOccurs="1"/>
+      <xsd:element ref="itsm1:AttachmentNameText"/>
+      <xsd:element ref="itsm1:Attachment"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="urn:oio:atp:itsm:1.0.0"
+  xmlns:itsm1="urn:oio:atp:itsm:1.0.0"
+  elementFormDefault="qualified"
+  xml:lang="DA">
+  <xsd:include schemaLocation="SymptomCode.xsd"/>
+  <xsd:include schemaLocation="SymptomMemoText.xsd"/>
+  <xsd:element name="SymptomStructure" type="itsm1:SymptomStructureType"/>
+  <xsd:complexType name="SymptomStructureType">
+    <xsd:sequence>
+      <xsd:element ref="itsm1:SymptomCode"/>
+      <xsd:element ref="itsm1:SymptomMemoText"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="urn:oio:atp:itsm:1.0.0"
+  xmlns:itsm1="urn:oio:atp:itsm:1.0.0"
+  elementFormDefault="qualified"
+  xml:lang="DA">
+  <xsd:include schemaLocation="SolutionCode.xsd"/>
+  <xsd:include schemaLocation="SolutionMemoText.xsd"/>
+  <xsd:element name="SolutionStructure" type="itsm1:SolutionStructureType"/>
+  <xsd:complexType name="SolutionStructureType">
+    <xsd:sequence>
+      <xsd:element ref="itsm1:SolutionCode"/>
+      <xsd:element ref="itsm1:SolutionMemoText"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

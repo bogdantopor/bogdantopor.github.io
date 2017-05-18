@@ -1,0 +1,15 @@
+#Tue Apr 26 13:15:36 CEST 2016
+ConfigurationItemCaseCollectionType=UpdateCase.xsd
+AddAttachmentResponseType=AddAttachmentResponse.xsd
+SymptomStructureType=UpdateCase.xsd
+UpdateCaseType=UpdateCase.xsd
+QueryCaseType=QueryCase.xsd
+SolutionStructureType=UpdateCase.xsd
+UpdateCaseResponseType=UpdateCaseResponse.xsd
+CreateCaseATPResponseType=CreateCaseATPResponse.xsd
+ConfigurationItemCaseStructureType=UpdateCase.xsd
+AddAttachmentType=AddAttachment.xsd
+CreateCaseATPType=CreateCaseATP.xsd
+CreateCaseVendorType=CreateCaseVendor.xsd
+QueryCaseResponseType=QueryCaseResponse.xsd
+CreateCaseVendorResponseType=CreateCaseVendorResponse.xsd

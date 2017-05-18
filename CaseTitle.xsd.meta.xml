@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://rep.oio.dk/infostructurebase/schemas/2004/09/13/">
+  <Title>CaseTitle</Title>
+  <DescriptionStructure>
+    <DescriptionEnglish/>
+    <DescriptionDanish>CaseTitle</DescriptionDanish>
+  </DescriptionStructure>
+  <LabelStructure>
+    <LabelDanish>CaseTitle</LabelDanish>
+  </LabelStructure>
+  <Author>servicedesk@atp.dk</Author>
+  <Version>1.0.0</Version>
+  <KeywordCollection>
+    <Keyword>CaseTitle</Keyword>
+  </KeywordCollection>
+</Metadata>

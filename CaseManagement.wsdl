@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:itsm="urn:oio:atp:itsm:casemanagement:1.0.0"
+  xmlns:qlm="http://iet.atp.dk/2006/QlmInformation/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  name="CaseManagement"
+  targetNamespace="urn:oio:atp:itsm:casemanagement:1.0.0">
+  <wsdl:documentation>
+    <ServiceName>CaseManagement</ServiceName>
+    <Version>5</Version>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="urn:oio:atp:itsm:casemanagement:1.0.0">
+      <xsd:include schemaLocation="AddAttachment.xsd"/>
+      <xsd:include schemaLocation="AddAttachmentResponse.xsd"/>
+      <xsd:include schemaLocation="CreateCaseVendor.xsd"/>
+      <xsd:include schemaLocation="CreateCaseVendorResponse.xsd"/>
+      <xsd:include schemaLocation="QueryCase.xsd"/>
+      <xsd:include schemaLocation="QueryCaseResponse.xsd"/>
+      <xsd:include schemaLocation="CreateCaseATP.xsd"/>
+      <xsd:include schemaLocation="CreateCaseATPResponse.xsd"/>
+      <xsd:include schemaLocation="UpdateCase.xsd"/>
+      <xsd:include schemaLocation="UpdateCaseResponse.xsd"/> 
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddAttachmentMessage">
+    <wsdl:part element="itsm:AddAttachment" name="AddAttachmentBody"/>
+  </wsdl:message>
+  <wsdl:message name="AddAttachmentResponseMessage">
+    <wsdl:part element="itsm:AddAttachmentResponse" name="AddAttachmentResponseBody"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCaseVendorMessage">
+    <wsdl:part element="itsm:CreateCaseVendor" name="CreateCaseVendorBody"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCaseVendorResponseMessage">
+    <wsdl:part element="itsm:CreateCaseVendorResponse" name="CreateCaseVendorResponseBody"/>
+  </wsdl:message>
+  <wsdl:message name="QueryCaseMessage">
+    <wsdl:part element="itsm:QueryCase" name="QueryCaseBody"/>
+  </wsdl:message>
+  <wsdl:message name="QueryCaseResponseMessage">
+    <wsdl:part element="itsm:QueryCaseResponse" name="QueryCaseResponseBody"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCaseATPMessage">
+    <wsdl:part element="itsm:CreateCaseATP" name="CreateCaseATPBody"/>
+  </wsdl:message>
+  <wsdl:message name="CreateCaseATPResponseMessage">
+    <wsdl:part element="itsm:CreateCaseATPResponse" name="CreateCaseATPResponseBody"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCaseMessage">
+    <wsdl:part element="itsm:UpdateCase" name="UpdateCaseBody"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCaseResponseMessage">
+    <wsdl:part element="itsm:UpdateCaseResponse" name="UpdateCaseResponseBody"/>
+  </wsdl:message>
+  <wsdl:portType name="CaseManagementInterface">
+    <wsdl:operation name="AddAttachment">
+      <wsdl:input message="itsm:AddAttachmentMessage" name="AddAttachmentIn">		
+      </wsdl:input>
+      <wsdl:output message="itsm:AddAttachmentResponseMessage" name="AddAttachmentOut">	
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCaseVendor">
+      <wsdl:input message="itsm:CreateCaseVendorMessage" name="CreateCaseVendorIn">		
+      </wsdl:input>
+      <wsdl:output message="itsm:CreateCaseVendorResponseMessage" name="CreateCaseVendorOut">	
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCase">
+      <wsdl:input message="itsm:QueryCaseMessage" name="QueryCaseIn">		
+      </wsdl:input>
+      <wsdl:output message="itsm:QueryCaseResponseMessage" name="QueryCaseOut">	
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCaseATP">
+      <wsdl:input message="itsm:CreateCaseATPMessage" name="CreateCaseATPIn">		
+      </wsdl:input>
+      <wsdl:output message="itsm:CreateCaseATPResponseMessage" name="CreateCaseATPOut">	
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCase">
+      <wsdl:input message="itsm:UpdateCaseMessage" name="UpdateCaseIn">		
+      </wsdl:input>
+      <wsdl:output message="itsm:UpdateCaseResponseMessage" name="UpdateCaseOut">	
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CaseManagementBinding" type="itsm:CaseManagementInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddAttachment">
+      <soap:operation soapAction="urn:oio:atp:itsm:casemanagement:1.0.0:#AddAttachment"/>
+      <wsdl:input name="AddAttachmentIn">
+        <soap:body parts="AddAttachmentBody" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddAttachmentOut">
+        <soap:body parts="AddAttachmentResponseBody" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCaseVendor">
+      <soap:operation soapAction="urn:oio:atp:itsm:casemanagement:1.0.0:#CreateCaseVendor"/>
+      <wsdl:input name="CreateCaseVendorIn">
+        <soap:body parts="CreateCaseVendorBody" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CreateCaseVendorOut">
+        <soap:body parts="CreateCaseVendorResponseBody" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCase">
+      <soap:operation soapAction="urn:oio:atp:itsm:casemanagement:1.0.0:#QueryCase"/>
+      <wsdl:input name="QueryCaseIn">
+        <soap:body parts="QueryCaseBody" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="QueryCaseOut">
+        <soap:body parts="QueryCaseResponseBody" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCaseATP">
+      <soap:operation soapAction="urn:oio:atp:itsm:casemanagement:1.0.0:#CreateCaseATP"/>
+      <wsdl:input name="CreateCaseATPIn">
+        <soap:body parts="CreateCaseATPBody" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CreateCaseATPOut">
+        <soap:body parts="CreateCaseATPResponseBody" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCase">
+      <soap:operation soapAction="urn:oio:atp:itsm:casemanagement:1.0.0:#UpdateCase"/>
+      <wsdl:input name="UpdateCaseIn">
+        <soap:body parts="UpdateCaseBody" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateCaseOut">
+        <soap:body parts="UpdateCaseResponseBody" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding> 
+  <wsdl:service name="CaseManagement">
+    <wsdl:port binding="itsm:CaseManagementBinding" name="CaseManagement">
+      <soap:address location="http://ws.atp.dk/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

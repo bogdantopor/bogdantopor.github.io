@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="urn:oio:atp:itsm:casemanagement:1.0.0"
+  xmlns:itsm="urn:oio:atp:itsm:casemanagement:1.0.0"
+  xmlns:itsm1="urn:oio:atp:itsm:1.0.0"
+  elementFormDefault="qualified"
+  xml:lang="DA">
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="StatusCode.xsd"/>
+  <xsd:element name="AddAttachmentResponse" type="itsm:AddAttachmentResponseType"/>
+  <xsd:complexType name="AddAttachmentResponseType">
+    <xsd:sequence>
+      <xsd:element ref="itsm1:StatusCode"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

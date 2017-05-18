@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+      xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+      xmlns:itsm="urn:oio:atp:itsm:casemanagement:1.0.0"  
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+      xmlns:qlm="http://iet.atp.dk/2006/QlmInformation/" 
+      targetNamespace="urn:oio:atp:itsm:casemanagement:1.0.0" 
+      name="CaseManagement">
+  <wsdl:documentation>
+    <ServiceName>CaseManagement</ServiceName>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="urn:oio:atp:itsm:casemanagement:1.0.0">
+      <xsd:include schemaLocation="QueryCase.xsd"/>
+      <xsd:include schemaLocation="QueryCaseResponse.xsd"/> 
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="QueryCaseMessage">
+    <wsdl:part name="QueryCaseBody" element="itsm:QueryCase"/>
+  </wsdl:message>
+  <wsdl:message name="QueryCaseResponseMessage">
+    <wsdl:part name="QueryCaseResponseBody" element="itsm:QueryCaseResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CaseManagementInterface">
+    <wsdl:operation name="QueryCase">
+      <wsdl:input name="QueryCaseIn" message="itsm:QueryCaseMessage">		
+      </wsdl:input>
+      <wsdl:output name="QueryCaseOut" message="itsm:QueryCaseResponseMessage">	
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CaseManagementBinding" type="itsm:CaseManagementInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="QueryCase">
+      <soap:operation soapAction="urn:oio:atp:itsm:casemanagement:1.0.0:#QueryCase"/>
+      <wsdl:input name="QueryCaseIn">
+        <soap:body parts="QueryCaseBody" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="QueryCaseOut">
+        <soap:body parts="QueryCaseResponseBody" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding> 
+  <wsdl:service name="CaseManagement">
+    <wsdl:port binding="itsm:CaseManagementBinding" name="CaseManagement">
+      <soap:address location="http://ws.atp.dk/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

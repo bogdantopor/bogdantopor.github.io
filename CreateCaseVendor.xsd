@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="urn:oio:atp:itsm:casemanagement:1.0.0"
+  xmlns:itsm="urn:oio:atp:itsm:casemanagement:1.0.0"
+  xmlns:itsm1="urn:oio:atp:itsm:1.0.0"
+  elementFormDefault="qualified"
+  xml:lang="DA">
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="CaseTitle.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="CaseStatus.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="CasePriorityCode.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="VendorIdentifier.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="ITServiceIdentifier.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="SolutionStructure.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="SymptomStructure.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="ExternalReferenceIdentifier.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="ConfigurationItemCaseCollection.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="DispatchToCode.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="CaseTypeCode.xsd"/>
+  <xsd:import namespace="urn:oio:atp:itsm:1.0.0" schemaLocation="SystemIdentifier.xsd"/>
+  <xsd:element name="CreateCaseVendor" type="itsm:CreateCaseVendorType"/>
+  <xsd:complexType name="CreateCaseVendorType">
+    <xsd:sequence>
+      <xsd:element ref="itsm1:VendorIdentifier"/>
+      <xsd:element ref="itsm1:SystemIdentifier"/>
+      <xsd:element ref="itsm1:ExternalReferenceIdentifier"/>
+      <xsd:element ref="itsm1:CaseTypeCode"/>
+      <xsd:element ref="itsm1:ConfigurationItemCaseCollection"/>
+      <xsd:element ref="itsm1:CasePriorityCode"/>
+      <xsd:element ref="itsm1:ITServiceIdentifier"/>
+      <xsd:element ref="itsm1:CaseStatus"/>
+      <xsd:element ref="itsm1:DispatchToCode" minOccurs="0" maxOccurs="1"/>
+      <xsd:element ref="itsm1:CaseTitle"/>
+      <xsd:element ref="itsm1:SymptomStructure"/>
+      <xsd:element ref="itsm1:SolutionStructure" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
